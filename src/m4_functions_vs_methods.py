@@ -10,57 +10,10 @@ Authors: David Mutchler, Dave Fisher, Vibha Alangar, Amanda Stouder,
 ###############################################################################
 #
 # TODO: 2.
-#   READ this comment, ASKING QUESTIONS as needed to understand it.
-#
-# Part 1:  CONSTRUCTING objects, applying ** METHODS ** to them:
-#
-#   For objects that are CONSTRUCTED, we use the DOT notation
-#   to ask them to do things or to change their characteristics.
-#   For example:
-#      nadia = rg.SimpleTurtle()
-#      nadia.pen = rg.Pen('blue', 1)
-#      nadia.forward(100)
-#
-#   In the above example:
-#
-#      pen      is an   INSTANCE VARIABLE   (aka DATA ATTRIBUTE, FIELD)
-#                 of SimpleTurtles.  It is a CHARACTERISTIC of
-#                 SimpleTurtles. Each SimpleTurtle has its own VALUE
-#                 of that characteristic.
-#
-#      forward  is a   METHOD   (aka FUNCTION ATTRIBUTE)
-#                 of SimpleTurtles.  It is something that any
-#                 SimpleTurtle can DO.  It is just like a FUNCTION
-#                 except for details about the way that it is called.
-#
-#   The statement
-#        nadia.forward(100)
-#   CALLS the   forward   METHOD on nadia, sending that method the number 100
-#   and making the method run (execute).
-#
-# Part 2:  Defining and calling ** FUNCTIONS **.
-#
-#   We   ** define **   FUNCTIONS to give NAMES to blocks of code
-#   (note FUNCTIONS and METHODS are different).
-#   For example:
-#
-#      def turtle3():
-#          maja = rg.SimpleTurtle()
-#          maja.pen = rg.Pen('green', 10)
-#          maja.paint_bucket = rg.PaintBucket('black')
-#            ...
-#
-#   We   ** call **   FUNCTIONS (that is, we make them run)
-#   in a way that is similar to how we call METHODS,
-#   but WITHOUT the DOT notation.  For example
-#      def main():
-#          turtle3()
-#
-#   Run this module and review the existing code.
-#   Can you identify the functions calls and methods calls?
-#
-#   When you believe you understand the differences and similarities between
-#   calling a FUNCTION and calling a METHOD, change the above TO-DO to DONE.
+#   With your instructor, READ the file   methods_vs_functions.txt
+#   in this project, ASKING QUESTIONS as needed to understand its contents.
+#   After you have done so, mark this _TODO_ as DONE
+#   and continue to the next _TODO_.
 #
 ###############################################################################
 
@@ -70,24 +23,27 @@ import rosegraphics as rg
 
 def main():
     """
-    Makes a TurtleWindow,
-    calls the other functions in this module to test/demo them,
-    and waits for the user to click anywhere in the window to close it.
+    Makes a TurtleWindow, calls the other functions in this module
+    to test and/or demonstrate them, and waits for the user to click
+    anywhere in the window to close it.
     """
     window = rg.TurtleWindow()
 
+    run_example()
+    try_methods()
+    try_functions()
+    try_methods_and_functions()
+
+    window.close_on_mouse_click()  # Your code must be ABOVE this statement
+
+
+def run_example():
+    """ An example of CALLING functions defined below. """
     jump_and_move_turtle(100, 50, 200, -100)
 
     turtle = rg.SimpleTurtle('square')
+    turtle.speed = 30
     draw_many_squares(turtle, 3, 75, 15)
-
-    turtle3()
-
-    ###########################################################################
-    # When the TODOs ask you to test YOUR code, put YOUR tests below this:
-    ###########################################################################
-
-    window.close_on_mouse_click()  # Your code must be ABOVE this statement
 
 
 def jump_and_move_turtle(x1, y1, x2, y2):
@@ -138,37 +94,38 @@ def draw_many_squares(my_turtle, number_of_squares, size, twist):
     #
     # Instead, ** CALL ** this function as needed in the other problems.
     # -------------------------------------------------------------------------
-    old_speed = my_turtle.speed
-    my_turtle.speed = 10
-
     for _ in range(number_of_squares):
         my_turtle.draw_square(size)
         my_turtle.left(twist)
 
-    my_turtle.speed = old_speed
 
-
-def turtle3(color, thickness):
-    """
-    Constructs a classic SimpleTurtle and asks it to draw a
-      "ball on pole" shape, using a Pen with the give color and thickness.
-    """
-    # -------------------------------------------------------------------------
-    # Students:
-    #   Do NOT touch this function - it has no TO-DO in it.
-    # -------------------------------------------------------------------------
-    maja = rg.SimpleTurtle()
-    maja.pen = rg.Pen(color, thickness)
-    maja.paint_bucket = rg.PaintBucket('black')
-    maja.speed = 15
-
-    maja.right(135)
-    maja.forward(300)
-
-    maja.begin_fill()
-    maja.draw_circle(50)
-    maja.end_fill()
-
+###############################################################################
+#
+# TODO: 3.
+#   There are four FUNCTIONS defined ABOVE this:
+#     main
+#     run_example
+#     jump_and_move_turtle
+#     draw_many_squares
+#
+#   1. RUN this program.
+#   2. TRACE the code, identifying what code causes what to be drawn.
+#   3. READ the specifications for the following functions:
+#        jump_and_move_turtle
+#        draw_many_squares
+#
+#   IMPORTANT: Keep those two functions (and what they do) in mind,
+#   since you will use them in the:
+#     try_functions
+#     try_methods_and_functions
+#   exercises below.
+#
+#   Once you believe that you completely understand what the functions:
+#        jump_and_move_turtle
+#        draw_many_squares
+#   do, mark this _TODO_ as DONE and continue to the next _TODO_.
+#
+###############################################################################
 
 def try_methods():
     """
@@ -182,7 +139,7 @@ def try_methods():
     """
     ###########################################################################
     # TODO: 3. Implement and test this function, per its doc-string above.
-    #     (To test it, put a statement in   main   that calls this function.)
+    #   The testing code (in main) is already written for you.
     ###########################################################################
 
 
@@ -196,13 +153,12 @@ def try_functions():
     """
     ###########################################################################
     # TODO: 4. Implement and test this function, per its doc-string above.
-    #    (To test it, put a statement in   main   that calls this function.)
+    #   The testing code (in main) is already written for you.
     #
     #    NOTE: This function requires
     #      ** exactly 3 lines **
     #    If you think it needs more, ** ASK FOR HELP. **
     #    HINT: see   jump_and_move_turtle   above.
-    #
     ###########################################################################
 
 
@@ -230,10 +186,10 @@ def try_methods_and_functions():
          Draw 8 squares whose size (width and height) are 300,
          each "twisted" from the previous by 60 degrees.
 
-      5. Changes its Pen to be a NEW Pen whose color is 'black'
+      5. Change its Pen to be a NEW Pen whose color is 'black'
          and whose thickness is 3.
 
-      6. Goes backward  200 units.
+      6. Go backward  200 units.
 
       7. Draw a CIRCLE whose radius is 30.
 
@@ -241,12 +197,11 @@ def try_methods_and_functions():
     """
     ###########################################################################
     # TODO: 5. Implement and test this function, per its doc-string above.
-    #    (To test it, put a statement in   main   that calls this function.)
+    #   The testing code (in main) is already written for you.
     #
     #   NOTE: This function should ** CALL ** the
     #     draw_many_squares
     #   function defined above.  If you don't see why, ** ASK FOR HELP. **
-    #
     ###########################################################################
 
 
