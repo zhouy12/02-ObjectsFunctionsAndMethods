@@ -51,19 +51,25 @@ def main():
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
 #
-#   The function:
-#     -- Constructs a TurtleWindow.
-#     -- Constructs two SimpleTurtles, where:
-#        - one has a Pen whose color is "green" and has the GIVEN thickness
-#        - the other has a Pen whose color is the GIVEN color
-#            and whose thickness is 5
-#     -- Makes the first (green) SimpleTurtle move FORWARD 100 pixels, and
-#        makes the other SimpleTurtle move BACKWARD 100 pixels.
+#   The function should do the following (in the order listed):
+#     a. Constructs a TurtleWindow.
+#     b. Constructs two SimpleTurtles, where:
+#          - one has a Pen whose color is "green" and has the GIVEN thickness
+#        - - the other has a Pen whose color is the GIVEN color
+#              and whose thickness is 5
+#
+#        Note: the "GIVEN" color means the PARAMETER that represents a color.
+#        Likewise, the "GIVEN" thickness means the PARAMETER for thickness.
+#
+#     c. Makes the first (green) SimpleTurtle move FORWARD 100 pixels, and
+#        makes the other (thickness 5) SimpleTurtle move BACKWARD 100 pixels.
+#
+#     d. Tells the TurtleWindow to wait until the mouse is clicked.
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function and print the returned value,
-#   to test whether you defined the function correctly.
+# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+#   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
 
@@ -85,8 +91,8 @@ def main():
 #   COMMIT adds the changed work to the version control on your computer
 #   and PUSH adds the changed work into your Github repository in the "cloud".
 #
-#    COMMIT-and-PUSH your work as often as you want, but at least for each
-#    module after you have tested the module and believe that it is correct.
+#   COMMIT-and-PUSH your work as often as you want, but at the least, commit
+#   and push after you have tested a module and believe that it is correct.
 #
 ###############################################################################
 
